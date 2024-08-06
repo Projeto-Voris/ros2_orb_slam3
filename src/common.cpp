@@ -67,8 +67,8 @@ MonocularMode::MonocularMode() :Node("mono_node_cpp")
     
     subexperimentconfigName = "/mono_py_driver/experiment_settings"; // topic that sends out some configuration parameters to the cpp ndoe
     pubconfigackName = "/mono_py_driver/exp_settings_ack"; // send an acknowledgement to the python node
-    subImgMsgName = "/mono_py_driver/img_msg"; // topic to receive RGB image messages
-    subTimestepMsgName = "/mono_py_driver/timestep_msg"; // topic to receive RGB image messages
+    subImgMsgName = "/stereo_left"; // topic to receive RGB image messages
+    subTimestepMsgName = "/stereo_left"; // topic to receive RGB image messages
 
     //* subscribe to python node to receive settings
     expConfig_subscription_ = this->create_subscription<std_msgs::msg::String>(subexperimentconfigName, 1, std::bind(&MonocularMode::experimentSetting_callback, this, _1));
